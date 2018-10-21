@@ -10,6 +10,20 @@
     <packaging>jar</packaging>
 
     <description>A simple utility mimicking Optional but tailored for Strings</description>
+    <url>https://github.com/RyanFromQA/string-optional</url>
+    <licenses>
+        <license>
+            <name>The GNU Lesser General Public License, Version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Ryan Trevisol</name>
+            <organizationUrl>https://github.com/RyanFromQA</organizationUrl>
+        </developer>
+    </developers>
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
