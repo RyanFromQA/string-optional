@@ -6,24 +6,33 @@
     <artifactId>string-optional</artifactId>
     <version>1.1-SNAPSHOT</version>
 
-    <name>String Optional</name>
     <packaging>jar</packaging>
 
+    <name>String Optional</name>
     <description>A simple utility mimicking Optional but tailored for Strings</description>
     <url>https://github.com/RyanFromQA/string-optional</url>
+
     <licenses>
         <license>
             <name>The GNU Lesser General Public License, Version 3.0</name>
             <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
-            <distribution>repo</distribution>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <name>Ryan Trevisol</name>
             <organizationUrl>https://github.com/RyanFromQA</organizationUrl>
         </developer>
     </developers>
+    
+    <scm>
+        <connection>scm:git:git://github.com/RyanFromQA/string-optional.git</connection>
+        <developerConnection>scm:git:git@github.com:RyanFromQA/string-optional.git</developerConnection>
+        <url>https://github.com/RyanFromQA/string-optional</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -121,12 +130,6 @@
         </repository>
     </distributionManagement>
 
-    <scm>
-        <connection>scm:git:git://github.com/RyanFromQA/string-optional.git</connection>
-        <developerConnection>scm:git:git@github.com:RyanFromQA/string-optional.git</developerConnection>
-        <url>https://github.com/RyanFromQA/string-optional</url>
-        <tag>HEAD</tag>
-    </scm>
 
     <profiles>
         <!-- GPG Signature on release -->
