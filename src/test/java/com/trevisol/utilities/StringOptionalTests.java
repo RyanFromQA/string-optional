@@ -24,6 +24,7 @@ public class StringOptionalTests {
     public void testIsPresent() {
         assertTrue(StringOptional.of(" a real string ").isPresent());
         assertTrue(StringOptional.of("a").isPresent());
+        assertTrue(StringOptional.of("                  a                  ").isPresent());
         assertFalse(StringOptional.of("      ").isPresent());
         assertFalse(StringOptional.of("").isPresent());
         assertFalse(StringOptional.of(null).isPresent());

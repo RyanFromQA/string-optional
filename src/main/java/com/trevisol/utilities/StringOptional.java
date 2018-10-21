@@ -21,7 +21,7 @@ public class StringOptional {
     private final String innerValue;
     private boolean present;
     /**
-     * A guaranteed not-present StringOptional
+     * A guaranteed not-present {@link StringOptional}
      */
     public static final StringOptional EMPTY = new StringOptional();
 
@@ -38,7 +38,7 @@ public class StringOptional {
     /**
      * Accepts a nullable input, and returns a StringOptional
      *
-     * @param input the string
+     * @param input the {@link String} to check
      * @return a StringOptional instance containing the input
      */
     public static StringOptional of(String input) {
@@ -46,9 +46,9 @@ public class StringOptional {
     }
 
     /**
-     * <strong>Use with care! This method offers no checking so it may result in a Null Pointer Exception</strong>
+     * <strong>Use with care! This method offers no checking so it may result in a {@link NullPointerException}</strong>
      *
-     * @return the value regardless of whether it is present.
+     * @return the value regardless of whether it is null or empty.
      */
     public String get() {
         return innerValue;
@@ -58,6 +58,7 @@ public class StringOptional {
     /**
      * Get the object if present or otherwise the default value supplied in the argument
      *
+     * @param defaultValue the value to return if the inner value is null or empty
      * @return the value if present, or the defaultValue
      */
     public String orElse(String defaultValue) {
@@ -66,8 +67,9 @@ public class StringOptional {
 
     /**
      * Get the object if present, or otherwise throw an exception
+     *
      * @param exceptionSupplier a {@link Supplier} of a child class of RuntimeException
-     * @return
+     * @return the inner value, if not null or empty
      */
     public String orElseThrow(Supplier<? extends RuntimeException> exceptionSupplier) {
         if (!present) {
@@ -77,7 +79,7 @@ public class StringOptional {
     }
 
     /**
-     * @return whether the string was evaluated as present
+     * @return whether the string was evaluated as not null or empty
      */
     public boolean isPresent() {
         return present;
@@ -85,7 +87,8 @@ public class StringOptional {
 
     /**
      * Check if the inner value is present, and if so, do something with it in the supplied consumer.
-     * @param doThis
+     *
+     * @param doThis a {@link Consumer<String>} to perform if the inner value is present
      */
     public void ifPresent(Consumer<String> doThis) {
         if (present) {
@@ -93,6 +96,10 @@ public class StringOptional {
         }
     }
 
+    /**
+     * Checks in a manner similar to Apache's StringUtils#isEmpty
+     * @return
+     */
     private boolean checkPresence() {
         return innerValue != null &&
                 innerValue.length() > 0 &&
