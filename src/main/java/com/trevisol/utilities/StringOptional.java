@@ -1,7 +1,9 @@
 package com.trevisol.utilities;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -98,12 +100,26 @@ public class StringOptional {
 
     /**
      * Checks in a manner similar to Apache's StringUtils#isEmpty
+     *
      * @return
      */
     private boolean checkPresence() {
         return innerValue != null &&
-                innerValue.length() > 0 &&
-                !innerValue.chars().allMatch(Character::isWhitespace);
+            innerValue.length() > 0 &&
+            !innerValue.chars().allMatch(Character::isWhitespace);
+    }
+
+    /**
+     * Provides similar functionality to the {@link Optional#map(Function)} method; transforms the inner value if present.
+     *
+     * @param mappingFunction a function which accepts a string, and produces T
+     * @param <T>             the product of the mappingFunction
+     * @return an optional of type T, or Optional.empty() if the inner value is not present
+     */
+
+    public <T> Optional<T> map(Function<String, ? extends T> mappingFunction) {
+        Objects.requireNonNull(mappingFunction);
+        return isPresent() ? Optional.ofNullable(mappingFunction.apply(innerValue)) : Optional.empty();
     }
 
 }

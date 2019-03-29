@@ -63,4 +63,11 @@ public class StringOptionalTests {
         assertEquals(StringOptional.of("      ").orElse("that was blank"), "that was blank");
         assertEquals(StringOptional.of("that was a real string").orElse("never gonna give you up"), "that was a real string");
     }
+
+    @Test
+    public void testMapping() {
+        assertEquals(StringOptional.of(null).map(Integer::parseInt).orElse(1), (Integer) 1);
+        assertEquals(StringOptional.of(null).map(String::toUpperCase).orElse("nope"), "nope");
+        assertEquals(StringOptional.of("lowercase").map(String::toUpperCase).get(), "LOWERCASE");
+    }
 }
