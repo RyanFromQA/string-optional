@@ -110,10 +110,9 @@ public class StringOptional {
     }
 
     /**
-     * Provides similar functionality to the {@link Optional#map(Function)} method; transforms the inner value if present.
+     * Provides similar functionality to the Optional.map method; transforms the inner value if present.
      *
      * @param mappingFunction a function which accepts a string, and produces T
-     * @param <T>             the product of the mappingFunction
      * @return an optional of type T, or Optional.empty() if the inner value is not present
      */
 
