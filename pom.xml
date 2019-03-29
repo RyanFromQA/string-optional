@@ -4,7 +4,7 @@
 
     <groupId>com.trevisol</groupId>
     <artifactId>string-optional</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <packaging>jar</packaging>
 
@@ -30,7 +30,7 @@
         <connection>scm:git:git://github.com/RyanFromQA/string-optional.git</connection>
         <developerConnection>scm:git:git@github.com:RyanFromQA/string-optional.git</developerConnection>
         <url>https://github.com/RyanFromQA/string-optional</url>
-        <tag>HEAD</tag>
+        <tag>string-optional-1.2</tag>
     </scm>
 
     <properties>
