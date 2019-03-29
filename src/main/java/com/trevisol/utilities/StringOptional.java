@@ -7,16 +7,16 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
- * A utility class mimicking the API of {@link Optional <String>} with the added benefit of checking a String's contents.
+ * A utility class mimicking the API of {@link Optional} with the added benefit of checking a String's contents.
  * <p>
  * Uses a similar algorithm to Apache's StringUtils.isBlank to determine whether a String is "present" or not.
  * <p>
  * Examples:
  * <pre>
- * StringOptional.of(null) >> NOT present
- * StringOptional.of("") >> NOT present
- * StringOptional.of("   ") >> NOT present
- * StringOptional.of("content") >> present
+ * StringOptional.of(null) &gt; NOT present
+ * StringOptional.of("") &gt; NOT present
+ * StringOptional.of("   ") &gt; NOT present
+ * StringOptional.of("content") &gt; present
  * </pre>
  */
 public class StringOptional {
@@ -90,7 +90,7 @@ public class StringOptional {
     /**
      * Check if the inner value is present, and if so, do something with it in the supplied consumer.
      *
-     * @param doThis a {@link Consumer<String>} to perform if the inner value is present
+     * @param doThis a {@link Consumer} to perform if the inner value is present
      */
     public void ifPresent(Consumer<String> doThis) {
         if (present) {
@@ -113,6 +113,7 @@ public class StringOptional {
      * Provides similar functionality to the Optional.map method; transforms the inner value if present.
      *
      * @param mappingFunction a function which accepts a string, and produces T
+     * @param <T> the type returned by the mapppingFunction
      * @return an optional of type T, or Optional.empty() if the inner value is not present
      */
 
