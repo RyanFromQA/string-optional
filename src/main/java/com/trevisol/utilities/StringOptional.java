@@ -87,6 +87,13 @@ public class StringOptional {
         return present;
     }
 
+    /** 
+     * @return true if empty, false otherwise, like Optional#isEmpty
+     */
+    public boolean isEmpty() {
+        return !present;
+    }
+
     /**
      * Check if the inner value is present, and if so, do something with it in the supplied consumer.
      *
