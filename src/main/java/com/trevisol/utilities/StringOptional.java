@@ -47,6 +47,16 @@ public class StringOptional {
         return new StringOptional(input);
     }
 
+    /** 
+     * Accepts a Optional of type String, converts it to a StringOptional
+     * 
+     * @param input a {@link Optional} of type {@link String}
+     * @return a StringOptional instance containing the value in the Optional 
+     */
+    public static StringOptional of(Optional<String> input) {
+        return input.isPresent() ? new StringOptional(input.get()) : StringOptional.EMPTY; 
+    }
+
     /**
      * <strong>Use with care! This method offers no checking so it may result in a {@link NullPointerException}</strong>
      *
