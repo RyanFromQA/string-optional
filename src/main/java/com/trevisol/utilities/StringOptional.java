@@ -57,7 +57,7 @@ public class StringOptional {
      * @param input a {@link Optional} of type {@link String}
      * @return a StringOptional instance containing the value in the Optional
      */
-    public static StringOptional of(Optional<String> input) {
+    public static StringOptional ofOptional(Optional<String> input) {
         return input.isPresent() ? new StringOptional(input.get()) : StringOptional.EMPTY;
     }
 
