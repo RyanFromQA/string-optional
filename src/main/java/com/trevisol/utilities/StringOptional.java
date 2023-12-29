@@ -78,6 +78,22 @@ public class StringOptional {
     }
 
     /**
+     * Checks to see if the {@link #innerValue} is present. If it is, it returns
+     * that. Otherwise, call the {@link Supplier}
+     * 
+     * @param supplier a {@link Supplier} function to call if the StringOptional is
+     *                 empty
+     * @return the innerValue of the StringOptional or whatever the Supplier returns
+     */
+    public String orElseGet(Supplier<? extends String> supplier) {
+        if (present) {
+            return innerValue;
+        } else {
+            return supplier.get();
+        }
+    }
+
+    /**
      * Get the object if present, or otherwise throw an exception
      *
      * @param exceptionSupplier a {@link Supplier} of a child class of RuntimeException
