@@ -132,6 +132,20 @@ public class StringOptional {
     }
 
     /**
+     * If the innerValue is present, call the first action to do something. If it is not present, call the empty action
+     * 
+     * @param action        Consumer to call if the value is present
+     * @param emptyAction   Runnable to call if value is empty
+     */
+    public void ifPresentOrElse(Consumer<String> action, Runnable emptyAction) {
+        if(isPresent()) {
+            action.accept(innerValue);
+        } else {
+            emptyAction.run();
+        }
+    }
+
+    /**
      * Checks in a manner similar to Apache's StringUtils#isEmpty
      *
      * @return
