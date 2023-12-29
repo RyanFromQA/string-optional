@@ -129,4 +129,13 @@ public class StringOptional {
         return isPresent() ? Optional.ofNullable(mappingFunction.apply(innerValue)) : Optional.empty();
     }
 
+    /**
+     * Converts the StringOptional into an Optional
+     * 
+     * @return an Optional of type String or Optional.EMPTY if not present
+     */
+    public Optional<String> asOptional() {
+        return present ? Optional.of(innerValue) : Optional.empty();
+
+    }
 }
