@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 /**
  * A utility class mimicking the API of {@link Optional} with the added benefit of checking a String's contents.
@@ -142,6 +143,19 @@ public class StringOptional {
             action.accept(innerValue);
         } else {
             emptyAction.run();
+        }
+    }
+
+    /**
+     * Converts the StringOptional into a stream of a single entry
+     * 
+     * @return a Stream of a single entry if a value is present, otherwise an empty stream
+     */
+    public Stream<String> stream() {
+        if(isPresent()) {
+            return Stream.of(innerValue);
+        } else {
+            return Stream.empty();
         }
     }
 
